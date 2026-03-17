@@ -113,7 +113,7 @@ export default function About() {
                 Follow on GitHub
               </SocialLink>
               <SocialLink
-                href="www.linkedin.com/in/jose-cardozo-calderon-597650b3"
+                href="https://www.linkedin.com/in/jose-cardozo-calderon-597650b3/"
                 icon={LinkedInIcon}
                 className="mt-4"
               >

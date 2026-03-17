@@ -279,7 +279,7 @@ export default function Home({ articles }) {
         <title>Jose Cardozo - Leader, artist, and frontend enthusiast</title>
         <meta
           name="description"
-          content="I&#39;m Jose Cardozo. A leader, artist, and frontend enthusiast"
+          content="I&#39;m Jose Cardozo. A leader, artist, Web Developer and Backend-Frontend (FullStack) enthusiast"
         />
       </Head>
       <Container className="mt-9">
@@ -300,7 +300,7 @@ export default function Home({ articles }) {
               icon={GitHubIcon}
             />
             <SocialLink
-              href="www.linkedin.com/in/jose-cardozo-calderon-597650b3"
+              href="https://www.linkedin.com/in/jose-cardozo-calderon-597650b3/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
