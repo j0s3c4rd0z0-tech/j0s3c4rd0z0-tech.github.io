@@ -295,12 +295,12 @@ export default function Home({ articles }) {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://github.com/vjordan-cs"
+              href="https://github.com/j0s3c4rd0z0-tech"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com/in/Jose-jordan01/"
+              href="www.linkedin.com/in/jose-cardozo-calderon-597650b3"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />

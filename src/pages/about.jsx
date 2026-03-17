@@ -106,21 +106,21 @@ export default function About() {
                 Follow on Instagram
               </SocialLink> */}
               <SocialLink
-                href="https://github.com/vjordan-cs"
+                href="https://github.com/j0s3c4rd0z0-tech"
                 icon={GitHubIcon}
                 className="mt-4"
               >
                 Follow on GitHub
               </SocialLink>
               <SocialLink
-                href="https://linkedin.com/in/Jose-jordan01/"
+                href="www.linkedin.com/in/jose-cardozo-calderon-597650b3"
                 icon={LinkedInIcon}
                 className="mt-4"
               >
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:vjordan.cs@gmail.com"
+                href="mailto:j0s3c4rd0z0@gmail.com"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
