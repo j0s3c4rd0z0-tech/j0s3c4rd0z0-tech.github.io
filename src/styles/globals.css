@@ -1,0 +1,196 @@
+/* ============================================================
+   JOSE CARDOZO PORTFOLIO v2 — Global Styles
+   Design System: Tech-Premium / Dark Infrastructure Aesthetic
+   - Monospace accents for technical data
+   - Neon cyan/emerald glow effects on key elements
+   - Deep slate backgrounds with layered depth
+   - Removed: all teal-only color scheme, generic zinc defaults
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Core Palette */
+  --bg-primary: #080c14;
+  --bg-secondary: #0d1424;
+  --bg-card: #111827;
+  --bg-card-hover: #162035;
+
+  /* Neon Accents */
+  --neon-cyan: #00d4ff;
+  --neon-emerald: #00ffb3;
+  --neon-purple: #a855f7;
+
+  /* Glow Shadows */
+  --glow-cyan: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1);
+  --glow-emerald: 0 0 20px rgba(0, 255, 179, 0.25), 0 0 60px rgba(0, 255, 179, 0.08);
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  /* Border Gradients */
+  --border-gradient: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 255, 179, 0.1), rgba(168, 85, 247, 0.2));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: #e2e8f0;
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-emerald));
+  border-radius: 2px;
+}
+
+/* ── Global Grid Noise Background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(0, 212, 255, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 255, 179, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Neon Glow Utility ── */
+.glow-cyan { text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.3); }
+.glow-emerald { text-shadow: 0 0 20px rgba(0, 255, 179, 0.6), 0 0 40px rgba(0, 255, 179, 0.3); }
+
+/* ── Gradient Border Card ── */
+.card-gradient-border {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 16px;
+  z-index: 0;
+}
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 255, 179, 0.08), rgba(168, 85, 247, 0.15));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.card-gradient-border:hover::before { opacity: 1; }
+
+/* ── Mono Tag ── */
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  opacity: 0.8;
+}
+
+/* ── Scanning Line Animation ── */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* ── Pulse Ring ── */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ── Float ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ── Typewriter blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1.2s step-end infinite;
+  color: var(--neon-cyan);
+}
+
+/* ── Gradient Text ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-emerald) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section Divider ── */
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), transparent);
+  margin-bottom: 2rem;
+}
+
+/* ── Skill Pill ── */
+.skill-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: rgba(0, 212, 255, 0.06);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  color: rgba(0, 212, 255, 0.85);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.skill-pill:hover {
+  background: rgba(0, 212, 255, 0.12);
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+}
+
+/* ── Nav Active ── */
+.nav-link-active {
+  color: var(--neon-cyan) !important;
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; opacity: 0; }
+.animate-delay-200 { animation-delay: 0.2s; opacity: 0; }
+.animate-delay-300 { animation-delay: 0.3s; opacity: 0; }
+.animate-delay-400 { animation-delay: 0.4s; opacity: 0; }
+.animate-delay-500 { animation-delay: 0.5s; opacity: 0; }
