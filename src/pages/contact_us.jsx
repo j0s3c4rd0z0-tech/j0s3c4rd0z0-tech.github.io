@@ -176,7 +176,6 @@ function NodeCard({ label, title, subtitle, icon, iconBg, href, accentColor = '#
           flexShrink: 0,
           transition: 'box-shadow 0.3s ease',
         }}
-        // eslint-disable-next-line react/no-unknown-property
         onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 0 18px ${accentColor}33` }}
         onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none' }}
       >
@@ -368,6 +367,17 @@ export default function ContactUs() {
 
       {/* ── CONTACT CARDS GRID ───────────────────────────── */}
       <Container className="py-14">
+        {/* Email — Full Width */}
+        <div style={{ marginBottom: '1.25rem' }}>
+          <DataCard
+            label="Email Endpoint"
+            value="j0s3c4rd0z0@gmail.com"
+            icon={<MailIcon />}
+            copyable
+          />
+        </div>
+
+        {/* Grid: 3 Phones + 3 Links — symmetrical rows */}
         <div
           style={{
             display: 'grid',
@@ -375,15 +385,32 @@ export default function ContactUs() {
             gap: '1.25rem',
           }}
         >
-          {/* EMAIL */}
+          {/* ── DIRECT SECURE LINES (3 phones) ─────────── */}
           <DataCard
-            label="Email Endpoint"
-            value="j0s3c4rd0z0@gmail.com"
-            icon={<MailIcon />}
+            label="Direct Secure Line"
+            value="+34 742 098 040"
+            icon={<PhoneIcon />}
             copyable
+            sublabel="Málaga, Spain (ES)"
           />
 
-          {/* LINKEDIN */}
+          <DataCard
+            label="Direct Secure Line"
+            value="+34 605 019 481"
+            icon={<PhoneIcon />}
+            copyable
+            sublabel="Granada, Spain (ES)"
+          />
+
+          <DataCard
+            label="Direct Secure Line"
+            value="+57 318 4414445"
+            icon={<PhoneIcon />}
+            copyable
+            sublabel="Bogotá, Colombia (CO)"
+          />
+
+          {/* ── NETWORK NODES (3 links) ────────────────── */}
           <NodeCard
             label="Corporate Node"
             title="LinkedIn Profile"
@@ -394,16 +421,6 @@ export default function ContactUs() {
             accentColor="#00d4ff"
           />
 
-          {/* PHONE */}
-          <DataCard
-            label="Direct Secure Line"
-            value="+34 742 098 040"
-            icon={<PhoneIcon />}
-            copyable
-            sublabel="Málaga, Spain (ES)"
-          />
-
-          {/* PORTFOLIO */}
           <NodeCard
             label="Personal Host"
             title="Personal Portfolio"
@@ -413,23 +430,15 @@ export default function ContactUs() {
             href="https://josecardozo-github-io.vercel.app/home"
             accentColor="#a855f7"
           />
-          {/* Consultant Mode */}
+
           <NodeCard
             label="Consultant Mode"
             title="DARKROOT_STUDIO"
-            subtitle="darkrootstudio.vercel.app/"
+            subtitle="darkrootstudio.vercel.app"
             icon={<GlobeIcon />}
             iconBg="rgba(168,85,247,0.1)"
             href="https://darkrootstudio.vercel.app/"
             accentColor="#a855f7"
-          />
-          {/* PHONE */}
-          <DataCard
-            label="Direct Secure Line"
-            value="+34 605 019 481"
-            icon={<PhoneIcon />}
-            copyable
-            sublabel="Granada, Spain (ES)"
           />
         </div>
 
